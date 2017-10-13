@@ -1,0 +1,32 @@
+<div layout-gt-xs="row">
+    <form name="myForm">
+        <md-input-container>
+            <label>DD/MM/YY</label>
+            <md-datepicker ng-model="$ctrl.newTime.date" name="dateField" ng-change="$ctrl.generateTime()" required=""></md-datepicker>
+            <div ng-messages="myForm.dateField.$error">
+                <div ng-message="valid">This is not a date!</div>
+                <div ng-message="required">Date is required!</div>
+            </div>
+        </md-input-container>
+    </form>
+        <md-input-container style="width: 70px">
+<label>HH</label>
+<md-select ng-model="$ctrl.newTime.hour" ng-change="$ctrl.generateTime()">
+    <md-option ng-value="ho" ng-repeat="ho in $ctrl.ho">{{ ho }}</md-option>
+</md-select>
+</md-input-container>
+
+<md-input-container style="width: 70px">
+<label>MM</label>
+<md-select ng-model="$ctrl.newTime.minute" ng-change="$ctrl.generateTime()">
+    <md-option ng-value="min" ng-repeat="min in $ctrl.min">{{ min }}</md-option>
+</md-select>
+</md-input-container>
+
+<md-input-container style="width: 50px">
+<md-select ng-model="$ctrl.newTime.period" ng-change="$ctrl.generateTime()">
+    <md-option value="AM" ng-selected="true">AM</md-option>
+    <md-option value="PM">PM</md-option>
+</md-select>
+</md-input-container>
+</div>
